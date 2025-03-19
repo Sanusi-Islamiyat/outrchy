@@ -2,17 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./Form.css";
 
 function Form({ setBgColor, setText, setPageBgColor }) {
-  // Load from localStorage or use default values
+  
   const [tempBgColor, setTempBgColor] = useState(localStorage.getItem("bgColor") || "#041825");
   const [tempPageBgColor, setTempPageBgColor] = useState(localStorage.getItem("pageBgColor") || "#f7fbff");
   const [tempText, setTempText] = useState(localStorage.getItem("text") || "");
 
   useEffect(() => {
-    // Set initial values to match stored values
-    setBgColor(tempBgColor);
-    setPageBgColor(tempPageBgColor);
-    setText(tempText);
-  }, []);
+   
+}, [setBgColor, setPageBgColor, setText, tempBgColor, tempPageBgColor, tempText]);
+
 
   const handleApplyChanges = () => {
     setBgColor(tempBgColor);
