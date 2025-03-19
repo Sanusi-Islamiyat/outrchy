@@ -3,47 +3,42 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import "./App.css";
+import Banner from "./Components/banner";
+import Form from "./Components/form";
 
 function App() {
-  const [bgColor, setBgColor] = useState("#3498db");
-  const [text, setText] = useState("I love frontend development!");
+  // Load from localStorage or use default values
+  const [bgColor, setBgColor] = useState(localStorage.getItem("bgColor") || "#041825");
+  const [pageBgColor, setPageBgColor] = useState(localStorage.getItem("pageBgColor") || "#f7fbff");
+  const [text, setText] = useState(localStorage.getItem("text") || "The Joy of Reading: My Escape");
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
+  // Sync body background with selected page background color
+  useEffect(() => {
+    document.body.style.backgroundColor = pageBgColor;
+  }, [pageBgColor]);
+
+  // Save to localStorage whenever values change
+  useEffect(() => {
+    localStorage.setItem("bgColor", bgColor);
+    localStorage.setItem("pageBgColor", pageBgColor);
+    localStorage.setItem("text", text);
+  }, [bgColor, pageBgColor, text]);
+
   return (
-    <div className="container text-center mt-5">
-      <div
-        className="banner p-5 text-white rounded"
-        style={{ backgroundColor: bgColor }}
-        data-aos="fade-up"
-      >
-        <h1>{text}</h1>
-      </div>
-
-      <div className="form mt-4">
-        <div className="mb-3">
-          <label className="form-label fw-bold">Change Background Color:</label>
-          <input
-            type="color"
-            className="form-control form-control-color"
-            onChange={(e) => setBgColor(e.target.value)}
-          />
-        </div>
-
-        <div className="mb-3">
-          <label className="form-label fw-bold">Change Banner Text:</label>
-          <input
-            type="text"
-            className="form-control"
-            onChange={(e) => setText(e.target.value)}
-            placeholder="Enter new text"
-          />
-        </div>
-      </div>
+    <div className="text-center mt-5 main-container">
+      <Banner 
+        bgColor={bgColor} 
+        bgImage="https://i.pinimg.com/736x/de/b8/da/deb8da4c68cc148b0aecf8f63a955a63.jpg" 
+        text={text}  
+      />
+      <Form setBgColor={setBgColor} setText={setText} setPageBgColor={setPageBgColor} />
     </div>
   );
 }
 
 export default App;
+
