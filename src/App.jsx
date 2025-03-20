@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import "./App.css";
 import Banner from "./Components/banner";
-import Form from "./Components/form";
+import Form from "./Components/Form";
 
 function App() {
   // Load from localStorage or use default values
