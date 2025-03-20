@@ -32,7 +32,6 @@ function App() {
     <div className="text-center mt-5 main-container">
       <Banner 
         bgColor={bgColor} 
-        bgImage="https://i.pinimg.com/736x/de/b8/da/deb8da4c68cc148b0aecf8f63a955a63.jpg" 
         text={text}  
       />
       <Form setBgColor={setBgColor} setText={setText} setPageBgColor={setPageBgColor} />
