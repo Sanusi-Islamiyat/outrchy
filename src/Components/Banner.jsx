@@ -4,8 +4,8 @@ import "./Banner.css";
 function Banner({ bgColor, text }) {
   return (
     <div className="banner-container text-center" style={{ backgroundColor: bgColor }} data-aos="fade-up">
-      <img src={'/src/assets/Untitled design (2).png'} alt="Banner" className="banner-image1" />
-      <img src={'/src/assets/Untitled design (2).png'} alt="Banner" className="banner-image" />
+      <img src={'/abstract.png'} alt="Banner" className="banner-image1" />
+      <img src={'/abstract.png'} alt="Banner" className="banner-image" />
       <h1 className="banner-title">{text}</h1>
       <p className="banner-description">
 There’s something magical about getting lost in a good book. The moment I flip open a page, the world around me fades, and I step into a new reality—one filled with adventure, knowledge, or deep human emotions. Whether it's fiction or non-fiction, each book offers a doorway into different perspectives, ideas, and experiences that expand my mind in ways nothing else can.  
