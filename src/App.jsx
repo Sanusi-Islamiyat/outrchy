@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import "./App.css";
-import Banner from "./Components/banner";
+import Banner from "./Components/Banner";
 import Form from "./Components/Form";
 
 function App() {
